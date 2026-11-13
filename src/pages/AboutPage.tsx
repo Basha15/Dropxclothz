@@ -23,7 +23,7 @@ export const AboutPage: React.FC = () => {
         <div className="relative aspect-[16/8] sm:aspect-[21/9] overflow-hidden bg-[#171719] shadow-xl">
           <img
             src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=2000&q=85"
-            alt="The Atelier Workshop"
+            alt="The Design Studio Workshop"
             className="w-full h-full object-cover object-center filter brightness-90"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-8 sm:p-14">
@@ -118,8 +118,8 @@ export const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* 4. Atelier Life */}
-      <section id="ateliers" className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* 4. Studio Life */}
+      <section id="studio" className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6 space-y-6">
             <span className="text-[10px] uppercase tracking-[0.3em] text-[#C5A880] font-semibold">

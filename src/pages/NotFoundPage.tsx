@@ -26,7 +26,7 @@ export const NotFoundPage: React.FC = () => {
           to="/"
           className="px-8 py-3.5 bg-[#171719] hover:bg-[#C5A880] text-white hover:text-[#0D0D0E] text-xs uppercase tracking-widest font-medium transition-colors"
         >
-          Return to Atelier Home
+          Return to Home
         </Link>
         <Link
           to="/shop"

@@ -13,18 +13,40 @@ interface CheckoutModalProps {
 export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose }) => {
   const { items, subtotal, grandTotal, discountAmount, clearCart } = useCart();
   const [step, setStep] = useState<1 | 2 | 3>(1);
-  const [formData, setFormData] = useState({
-    firstName: 'Alexandre',
-    lastName: 'Laurent',
-    email: 'client@dropx-atelier.com',
-    address: '88 Fashion Avenue, Suite 4B',
-    city: 'New York',
-    postalCode: '10018',
-    country: 'United States',
-    paymentMethod: 'card',
-    cardNumber: '•••• •••• •••• 4242',
-    cardExp: '12/28',
-    cardCvc: '•••'
+  const [formData, setFormData] = useState(() => {
+    try {
+      const stored = localStorage.getItem('dropx_auth_user');
+      if (stored) {
+        const u = JSON.parse(stored);
+        const [first, ...rest] = (u.name || 'Alexandre Laurent').split(' ');
+        return {
+          firstName: first || 'Alexandre',
+          lastName: rest.join(' ') || 'Laurent',
+          email: u.email || 'customer@dropx.com',
+          address: '88 Fashion Avenue, Suite 4B',
+          city: 'New York',
+          postalCode: '10018',
+          country: 'United States',
+          paymentMethod: 'card',
+          cardNumber: '•••• •••• •••• 4242',
+          cardExp: '12/28',
+          cardCvc: '•••'
+        };
+      }
+    } catch {}
+    return {
+      firstName: 'Alexandre',
+      lastName: 'Laurent',
+      email: 'customer@dropx.com',
+      address: '88 Fashion Avenue, Suite 4B',
+      city: 'New York',
+      postalCode: '10018',
+      country: 'United States',
+      paymentMethod: 'card',
+      cardNumber: '•••• •••• •••• 4242',
+      cardExp: '12/28',
+      cardCvc: '•••'
+    };
   });
   const [orderNumber, setOrderNumber] = useState('');
 
@@ -86,12 +108,12 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
         {/* Header Steps */}
         <div className="mb-8">
           <span className="text-[10px] uppercase tracking-[0.25em] text-[#C5A880] font-semibold block">
-            DROPX ATELIER CHECKOUT
+            DROPX SECURE CHECKOUT
           </span>
           <h2 className="font-serif text-2xl sm:text-3xl text-[#171719] mt-1 font-normal">
             {step === 1 && 'Shipping & Delivery Address'}
             {step === 2 && 'Payment & Final Authorization'}
-            {step === 3 && 'Order Confirmed & Atelier Hand-off'}
+            {step === 3 && 'Order Confirmed & Ready to Ship'}
           </h2>
 
           {/* Stepper indicators */}
@@ -354,7 +376,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
               </span>
               <h3 className="font-serif text-3xl text-[#171719] mt-1">Thank you for your order</h3>
               <p className="text-xs text-[#7A7670] mt-2 max-w-md mx-auto">
-                Your bespoke creation is currently being prepared in our climate-regulated dispatch atelier.
+                Your order has been confirmed and is being carefully prepared for express dispatch.
               </p>
             </div>
 

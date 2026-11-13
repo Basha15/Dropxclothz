@@ -178,7 +178,7 @@ export const ContactPage: React.FC = () => {
                   <Mail className="w-5 h-5 text-[#C5A880] flex-shrink-0 mt-0.5" />
                   <div>
                     <h4 className="text-xs uppercase tracking-wider font-semibold text-[#171719]">Concierge Desk</h4>
-                    <p className="text-xs text-[#5A5852]">concierge@dropx-atelier.com</p>
+                    <p className="text-xs text-[#5A5852]">concierge@dropx.com</p>
                     <p className="text-[10px] text-[#8C8880] mt-0.5">Average reply time under 4 hours</p>
                   </div>
                 </div>

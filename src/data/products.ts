@@ -983,8 +983,8 @@ export const PRESS_QUOTES = [
   }
 ];
 
-export const ATELIER_STORY = {
-  title: "The Spirit of the Atelier",
+export const BRAND_STORY = {
+  title: "The DropX Philosophy",
   headline: "Reclaiming the Dignity of Modern Ready-to-Wear Fashion",
   paragraphs: [
     "DROPX was conceived not as another seasonal conveyor belt, but as a sanctuary for deliberate, patient creation. In our partnered manufacturing facilities spanning Biella, Florence, and Okayama, clothing is treated as wearable sculpture—anchored in architectural silhouettes while stripped of superfluous ornamentation.",

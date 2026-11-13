@@ -106,7 +106,7 @@ export const Footer: React.FC = () => {
                 DROP<span className="font-sans font-bold text-[#C5A880]">X</span>
               </span>
               <span className="block text-[8px] tracking-[0.4em] uppercase text-[#C5A880] -mt-1 font-semibold">
-                ATELIER RETAIL
+                CLOTHING STORE
               </span>
             </Link>
             <p className="text-[#8E8A83] text-xs leading-relaxed max-w-xs font-light">
